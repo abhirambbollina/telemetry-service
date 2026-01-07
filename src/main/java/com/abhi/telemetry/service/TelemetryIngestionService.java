@@ -6,7 +6,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class TelemetryIngestionService {
 
+    private final TelemetryProcessor processor;
+
+    public TelemetryIngestionService(TelemetryProcessor processor) {
+        this.processor = processor;
+    }
+
     public void ingest(TelemetryEvent event) {
-        System.out.println("Ingested telemetry event: " + event);
+        processor.process(event);
     }
 }
