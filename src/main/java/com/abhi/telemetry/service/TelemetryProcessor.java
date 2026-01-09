@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 public class TelemetryProcessor {
 
     public void process(TelemetryEvent event) {
-        System.out.println("Processing telemetry: " + event);
+        System.out.println("Processing telemetry: " + event + "on thread: " + Thread.currentThread().getName());
     }
 }
